@@ -32,14 +32,6 @@ define(function(require, exports, module) {
 			completed.forEach(function(todo) {
 				todo.destroy();
 			});
-		},
-
-		showActive: function() {
-			// trigger task collection view to show only active	
-		},
-
-		showCompleted: function() {
-			// trigger task collection view to show only completed
 		}
 
 	});

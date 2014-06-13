@@ -16,9 +16,6 @@ var AppController = marionette.Controller.extend({
 
     initialize: function(options){
         this.app = app;
-    },
-
-    index: function(){
 
         var taskCollection = new TaskCollection();
 
@@ -31,7 +28,13 @@ var AppController = marionette.Controller.extend({
         this.app.header.show(headerView);
         this.app.list.show(taskCollectionView);
         this.app.footer.show(footerView);
+    },
 
+    filter: function(filter) {
+        // depending on route, show/hide active/completed
+        if(filter) {
+            this.app.list.currentView.el.className = 'show-' + filter;
+        }
     },
     
     keyDown: function(e){

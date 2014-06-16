@@ -1,0 +1,19 @@
+#todo {
+
+	.completed {
+		color: #cccccc;
+	}
+
+	&.show-completed {
+		.active {
+			display: none;
+		}
+	}
+
+	&.show-active {
+		.completed {
+			display: none;
+		}
+	}
+
+}

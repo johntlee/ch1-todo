@@ -6,6 +6,7 @@ define(function(require, exports, module) {
 	var TaskCollectionView = Marionette.CollectionView.extend({
 
 		tagName: "ul",
+		id: "todo",
 		itemView: TaskView
 		
 	});

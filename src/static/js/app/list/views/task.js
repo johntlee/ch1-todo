@@ -18,7 +18,7 @@ define(function(require, exports, module) {
 
 		events: {
 			'click .toggle': 'toggle',
-			'click .delete': 'delete'
+			'click .remove': 'delete'
 		},
 
 		// toggle between complete, active
@@ -28,7 +28,7 @@ define(function(require, exports, module) {
 		},
 
 		delete: function(){
-			this.model.destroy();
+			this.remove();
 		}
 
 	});

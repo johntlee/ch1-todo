@@ -1,6 +1,7 @@
 define(function(require, exports, module) {
 
 	var marionette = require('marionette');
+var keys = require('built/app/keys');
 
 	var templateHeader  = require('hbs!app/list/templates/header');
 
@@ -13,19 +14,27 @@ define(function(require, exports, module) {
 			'newTask': '.task-name'
 		},
 
-		events: {
-			'keypress .task-name': 'onKeyPress'
+		keyDown: function(e) {
+			var key = keys.getKeyFromEvent(e);
+
+			//if user pressed enter and input is in focus
+			if(key == "\r" && this.ui.newTask.is(':focus')) {
+				this.addNewTask();
+			}
 		},
 
-		onKeyPress: function(e) {
+		addNewTask: function(e) {
 
 			var taskText = this.ui.newTask.val();
 
-			if(e.which == 13 && taskText) {
+			// if input is not empty, add to collection
+			if(taskText) {
 				this.collection.add({ text: this.ui.newTask.val() });
 				this.ui.newTask.val('');
 			}
-		}
+
+		},
+
 	});
 
 	return HeaderView;

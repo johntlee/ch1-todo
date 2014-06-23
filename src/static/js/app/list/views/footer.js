@@ -19,7 +19,9 @@ define(function(require, exports, module) {
 			'click .completed': 'showCompleted'
 		},
 
-		initialize: function() {
+		initialize: function(options) {
+			this.collection = options.collection;
+
 			// whenever colelction is updated, update the count of total active tasks
 			this.listenTo(this.collection, 'all', this.countActiveTasks);
 		},

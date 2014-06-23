@@ -6,7 +6,8 @@ var AppController = require('app/app-controller').AppController;
 var AppRouter  =  marionette.AppRouter.extend({
     controller: new AppController(),
     appRoutes:{
-        '*filter': 'filter'
+        'filter/:filterType': 'filter',
+        '*index': 'index'
     }
 });
 

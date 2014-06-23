@@ -30,13 +30,16 @@ var AppController = marionette.Controller.extend({
         this.app.footer.show(footerView);
     },
 
-    filter: function(filter) {
-        // depending on route, show/hide active/completed
-        if(filter) {
-            this.app.list.currentView.el.className = 'show-' + filter;
-        }
+    // default view
+    index: function() {
+        this.app.list.currentView.el.className = 'show-all';
     },
-    
+
+    filter: function(filterType) {
+        // depending on route, show/hide active/completed
+        this.app.list.currentView.el.className = 'show-' + filterType;
+    },
+
     keyDown: function(e){
         var key = keys.getKeyFromEvent(e);
 

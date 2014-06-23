@@ -23,7 +23,7 @@ var keys = require('built/app/keys');
 			}
 		},
 
-		addNewTask: function(e) {
+		addNewTask: function() {
 
 			var taskText = this.ui.newTask.val();
 

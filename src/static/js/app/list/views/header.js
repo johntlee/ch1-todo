@@ -1,9 +1,11 @@
 define(function(require, exports, module) {
 
+	var marionette = require('marionette');
+
 	var templateHeader  = require('hbs!app/list/templates/header');
 
 	// adding a new task
-	var HeaderView = Marionette.ItemView.extend({
+	var HeaderView = marionette.ItemView.extend({
 
 		template: templateHeader,
 

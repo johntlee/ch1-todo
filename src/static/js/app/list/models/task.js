@@ -1,6 +1,8 @@
 define(function(require, exports, module) {
 
-	var Task = Backbone.Model.extend({
+    var backbone = require('backbone');
+
+	var Task = backbone.Model.extend({
 
 		defaults: {
 			text: 'A to-do item',
@@ -19,5 +21,5 @@ define(function(require, exports, module) {
 	});
 
 	return Task;
-	
+
 });

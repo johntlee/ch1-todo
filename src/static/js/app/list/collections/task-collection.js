@@ -1,8 +1,9 @@
 define(function(require, exports, module) {
 
+    var backbone = require('backbone');
     var Task = require('app/list/models/task');
 
-    var TaskCollection = Backbone.Collection.extend({
+    var TaskCollection = backbone.Collection.extend({
 
         model: Task,
 

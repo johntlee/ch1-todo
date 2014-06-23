@@ -9,16 +9,12 @@ define(function(require, exports, module) {
 
         // get all incompleted tasks
         getActive: function() {
-            return this.reject(this._isCompleted);
+            return this.where({ complete: false });
         },
 
         // get all completed tasks
         getCompleted: function() {
-            return this.filter(this._isCompleted);
-        },
-
-        _isCompleted: function(item) {
-            return item.isCompleted();
+            return this.where({ complete: true });
         }
 
     });

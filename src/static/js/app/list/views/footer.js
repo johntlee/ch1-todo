@@ -32,6 +32,7 @@ define(function(require, exports, module) {
 
 		// remove - not just hide - all completed tasks
 		removeCompleted: function() {
+			console.log(this.collection.getCompleted());
 			this.collection.remove(this.collection.getCompleted());
 		}
 

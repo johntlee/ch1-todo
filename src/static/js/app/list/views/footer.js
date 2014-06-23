@@ -14,7 +14,7 @@ define(function(require, exports, module) {
 		},
 
 		events: {
-			'click .clear': 'destroyCompleted',
+			'click .clear': 'removeCompleted',
 			'click .active': 'showActive',
 			'click .completed': 'showCompleted'
 		},
@@ -29,11 +29,8 @@ define(function(require, exports, module) {
 		},
 
 		// remove - not just hide - all completed tasks
-		destroyCompleted: function() {
-			var completed = this.collection.getCompleted();
-			completed.forEach(function(todo) {
-				todo.destroy();
-			});
+		removeCompleted: function() {
+			this.collection.remove(this.collection.getCompleted());
 		}
 
 	});

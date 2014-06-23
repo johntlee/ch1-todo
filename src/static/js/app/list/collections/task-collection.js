@@ -19,9 +19,9 @@ define(function(require, exports, module) {
         _isCompleted: function(item) {
             return item.isCompleted();
         }
-        
+
     });
 
     return TaskCollection;
-    
+
 });

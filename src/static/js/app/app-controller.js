@@ -8,7 +8,6 @@ var app = require('app/app');
 var TaskCollection = require('app/list/collections/task-collection');
 
 var HeaderView = require('app/list/views/header');
-var TaskView = require('app/list/views/task');
 var TaskCollectionView = require('app/list/views/task-collection');
 var FooterView = require('app/list/views/footer');
 
@@ -18,11 +17,12 @@ var AppController = marionette.Controller.extend({
         this.app = app;
 
         var taskCollection = new TaskCollection();
+        var viewOptions = { collection: taskCollection };
 
         // create all views
-        var headerView = new HeaderView({ collection: taskCollection });
-        var taskCollectionView = new TaskCollectionView({ collection: taskCollection });
-        var footerView = new FooterView({ collection: taskCollection });
+        var headerView = new HeaderView(viewOptions);
+        var taskCollectionView = new TaskCollectionView(viewOptions);
+        var footerView = new FooterView(viewOptions);
 
         // add all views to regions
         this.app.header.show(headerView);

@@ -1,9 +1,12 @@
 define(function(require, exports, module) {
 
     var backbone = require('backbone');
+    var localStorage = require('vendor/backbone/backbone.localStorage');
     var Task = require('app/list/models/task');
 
     var TaskCollection = backbone.Collection.extend({
+
+        localStorage: new Backbone.LocalStorage("TaskCollection"),
 
         model: Task,
 

@@ -11,7 +11,7 @@ define(function(require, exports, module) {
 
 		// switch between complete, incomplete
 		toggle: function() {
-			return this.set('complete', !this.get('complete'));
+			this.save({ complete: !this.get('complete') });
 		},
 
 		isCompleted: function() {

@@ -14,7 +14,13 @@ define(function(require, exports, module) {
 			'test': this.tagName
 		},
 
-		className: 'active',
+		className: function() {
+			if(this.model.isCompleted()) {
+				return "completed";
+			} else {
+				return "active";
+			}
+		},
 
 		events: {
 			'click .toggle': 'toggle',
@@ -28,7 +34,7 @@ define(function(require, exports, module) {
 		},
 
 		delete: function(){
-			this.remove();
+			this.model.destroy();
 		}
 
 	});

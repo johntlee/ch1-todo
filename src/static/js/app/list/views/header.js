@@ -1,8 +1,9 @@
 define(function(require, exports, module) {
 
 	var marionette = require('marionette');
-var keys = require('built/app/keys');
+	var keys = require('built/app/keys');
 
+    var Task = require('app/list/models/task');
 	var templateHeader  = require('hbs!app/list/templates/header');
 
 	// adding a new task
@@ -29,7 +30,9 @@ var keys = require('built/app/keys');
 
 			// if input is not empty, add to collection
 			if(taskText) {
-				this.collection.add({ text: this.ui.newTask.val() });
+				var newTask = new Task({ text: taskText });
+				this.collection.add(newTask);
+				newTask.save();
 				this.ui.newTask.val('');
 			}
 

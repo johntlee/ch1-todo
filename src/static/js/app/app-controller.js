@@ -19,6 +19,9 @@ var AppController = marionette.Controller.extend({
         var taskCollection = new TaskCollection();
         var viewOptions = { collection: taskCollection };
 
+        // get tasks from local storage
+        taskCollection.fetch();
+
         // create all views
         var headerView = new HeaderView(viewOptions);
         var taskCollectionView = new TaskCollectionView(viewOptions);

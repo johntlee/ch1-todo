@@ -1,15 +1,15 @@
 define(function(require, exports, module) {
 
-	var marionette = require('marionette');
-	var keys = require('built/app/keys');
+	var marionette     = require('marionette');
+	var keys           = require('built/app/keys');
 
-    var Task = require('app/list/models/task');
-	var templateHeader  = require('hbs!app/list/templates/header');
+	var Task           = require('app/list/models/task');
+	var TemplateHeader = require('hbs!app/list/templates/header');
 
 	// adding a new task
 	var HeaderView = marionette.ItemView.extend({
 
-		template: templateHeader,
+		template: TemplateHeader,
 
 		ui: {
 			'newTask': '.task-name'

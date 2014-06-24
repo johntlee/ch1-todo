@@ -1,15 +1,15 @@
 define(function(require, exports, module) {
 
-var $ = require('jquery');
-var marionette = require('marionette');
-var keys = require('built/app/keys');
-var app = require('app/app');
+var $                  = require('jquery');
+var marionette         = require('marionette');
+var keys               = require('built/app/keys');
+var app                = require('app/app');
 
-var TaskCollection = require('app/list/collections/task-collection');
+var TaskCollection     = require('app/list/collections/task-collection');
 
-var HeaderView = require('app/list/views/header');
+var HeaderView         = require('app/list/views/header');
 var TaskCollectionView = require('app/list/views/task-collection');
-var FooterView = require('app/list/views/footer');
+var FooterView         = require('app/list/views/footer');
 
 var AppController = marionette.Controller.extend({
 

@@ -1,8 +1,8 @@
 define(function(require, exports, module) {
 
-	var marionette = require('marionette');
+	var marionette   = require('marionette');
 
-	var templateTask    = require('hbs!app/list/templates/task');
+	var templateTask = require('hbs!app/list/templates/task');
 
 	// task item
 	var TaskView = marionette.ItemView.extend({
@@ -15,11 +15,7 @@ define(function(require, exports, module) {
 		},
 
 		className: function() {
-			if(this.model.isCompleted()) {
-				return "completed";
-			} else {
-				return "active";
-			}
+			return (this.model.isCompleted()) ? "completed" : "active";
 		},
 
 		events: {

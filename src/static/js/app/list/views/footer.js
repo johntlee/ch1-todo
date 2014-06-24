@@ -1,8 +1,8 @@
 define(function(require, exports, module) {
 
-	var marionette = require('marionette');
+	var marionette     = require('marionette');
 
-	var templateFooter 	= require('hbs!app/list/templates/footer');
+	var templateFooter = require('hbs!app/list/templates/footer');
 
 	// footer with options and info
 	var FooterView = marionette.ItemView.extend({
@@ -32,8 +32,8 @@ define(function(require, exports, module) {
 
 		// remove - not just hide - all completed tasks
 		removeCompleted: function() {
-			this.collection.getCompleted().forEach(function(item){
-				item.destroy();
+			this.collection.getCompleted().forEach(function(task){
+				task.destroy();
 			});
 		}
 

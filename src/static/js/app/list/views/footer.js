@@ -19,6 +19,12 @@ define(function(require, exports, module) {
 			'click .completed': 'showCompleted'
 		},
 
+		serializeData: function() {
+			return {
+				count: this.collection.getActive().length
+			}
+		},
+
 		initialize: function(options) {
 			this.collection = options.collection;
 

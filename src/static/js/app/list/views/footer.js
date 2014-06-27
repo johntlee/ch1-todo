@@ -14,9 +14,7 @@ define(function(require, exports, module) {
 		},
 
 		events: {
-			'click .clear': 'removeCompleted',
-			'click .active': 'showActive',
-			'click .completed': 'showCompleted'
+			'click .clear': 'removeCompleted'
 		},
 
 		serializeData: function() {

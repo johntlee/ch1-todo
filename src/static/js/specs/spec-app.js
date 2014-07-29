@@ -1,16 +1,16 @@
 define(function(require, exports, module) {
 
-describe('my description', function() {
+describe('Header View', function() {
 
-     beforeEach(function() {
-        loadFixtures('template.html');
+    beforeEach(function() {
     });
 
-    it('should succeed', function() {
-        var $node = $('#foo');
-        console.log($node.text());
-        expect(true).toBe(true);
+    it('should work', function() {
+
+    	expect(true).toBe(true);
+
     });
+
 
 });
 });

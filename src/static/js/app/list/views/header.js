@@ -15,11 +15,17 @@ define(function(require, exports, module) {
 			'newTask': '.task-name'
 		},
 
+		events: {
+			'keydown .task-name': 'keyDown'
+		},
+
 		keyDown: function(e) {
 			var key = keys.getKeyFromEvent(e);
 
+			console.log(key == '');
+
 			//if user pressed enter and input is in focus
-			if(key == "\r" && this.ui.newTask.is(':focus')) {
+			if(key == "") {
 				this.addNewTask();
 			}
 		},
@@ -36,7 +42,7 @@ define(function(require, exports, module) {
 				this.ui.newTask.val('');
 			}
 
-		},
+		}
 
 	});
 

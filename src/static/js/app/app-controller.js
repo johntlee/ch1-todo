@@ -34,8 +34,6 @@ var AppController = marionette.Controller.extend({
 
         // make header view accessible by other funcs
         this.headerView = headerView;
-
-        this.BUILT();
     },
 
     // default view

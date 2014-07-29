@@ -5,7 +5,10 @@ var tests = [
 
     // ---------------------------
     // Load Specs (AKA tests)
-    'tests/spec-app',
+    //'tests/spec-app',
+    'tests/spec-model-task',
+    'tests/spec-collection',
+    'tests/spec-header'
 ];
 
 requirejs.config({

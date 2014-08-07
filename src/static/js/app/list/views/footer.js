@@ -26,7 +26,7 @@ define(function(require, exports, module) {
 		initialize: function(options) {
 			this.collection = options.collection;
 
-			// whenever colelction is updated, update the count of total active tasks
+			// whenever collection is updated, update the count of total active tasks
 			this.listenTo(this.collection, 'all', this.countActiveTasks);
 		},
 

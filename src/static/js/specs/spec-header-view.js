@@ -20,7 +20,7 @@ describe('Header View', function() {
 	var $input	   = header.$('.task-name');
 
     beforeEach(function() {
-
+        $(header.ui.newTask).val('');
     });
 
     afterEach(function() {
@@ -29,32 +29,37 @@ describe('Header View', function() {
     // Test Suite
     it('does nothing when key down', function(){
 
-    	var spy = spyOn(header, 'addNewTask');
+    	var spy = spyOn(header, 'addNewTask').and.callThrough();
 
     	// enter in 'task' into input
-    	Events.simulateKeyDown($(header.ui.newTask), helpers.KeyCodes.t);
-    	Events.simulateKeyDown($(header.ui.newTask), helpers.KeyCodes.a);
-    	Events.simulateKeyDown($(header.ui.newTask), helpers.KeyCodes.s);
-    	Events.simulateKeyDown($(header.ui.newTask), helpers.KeyCodes.k);
+        Events.insertChar($(header.ui.newTask), 't');
+        Events.insertChar($(header.ui.newTask), 'a');
+        Events.insertChar($(header.ui.newTask), 's');
+        Events.insertChar($(header.ui.newTask), 'k');
 
-    	expect(spy).not.toHaveBeenCalled();
+        // expect 'task' to not be in collection
+        expect(collection.where({ text: 'task' })).toEqual([]);
 
     });
 
-    it('calls addNewTask when pressing return key with some task name', function(){
+    it('adds new task', function(){
 
-    	var spy = spyOn(header, 'addNewTask');
+    	var spy = spyOn(header, 'addNewTask').and.callThrough();
 
     	// enter in 'task' into input
-    	Events.simulateKeyDown($(header.ui.newTask), helpers.KeyCodes.t);
-    	Events.simulateKeyDown($(header.ui.newTask), helpers.KeyCodes.a);
-    	Events.simulateKeyDown($(header.ui.newTask), helpers.KeyCodes.s);
-    	Events.simulateKeyDown($(header.ui.newTask), helpers.KeyCodes.k);
+        Events.insertChar($(header.ui.newTask), 't');
+        Events.insertChar($(header.ui.newTask), 'a');
+        Events.insertChar($(header.ui.newTask), 's');
+        Events.insertChar($(header.ui.newTask), 'k');
 
     	// enter in return key
     	Events.simulateKeyDown($(header.ui.newTask), helpers.KeyCodes.return);
 
+        // expect to have called function to add new task
     	expect(spy).toHaveBeenCalled();
+
+        // expect 'task' to be in collection
+        expect(collection.where({ text: 'task' })).not.toEqual([]);
 
     });
 

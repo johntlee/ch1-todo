@@ -20,12 +20,8 @@ define(function(require, exports, module) {
 		},
 
 		keyDown: function(e) {
-			var key = keys.getKeyFromEvent(e);
-
-			console.log(key == '');
-
 			//if user pressed enter and input is in focus
-			if(key == "") {
+			if(e.which == 13) {
 				this.addNewTask();
 			}
 		},

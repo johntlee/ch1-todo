@@ -6,9 +6,11 @@ var tests = [
     // ---------------------------
     // Load Specs (AKA tests)
     //'tests/spec-app',
-    'tests/spec-model-task',
-    'tests/spec-collection',
-    'tests/spec-header'
+    'tests/spec-task-model',
+    'tests/spec-task-collection',
+    'tests/spec-header-view',
+    'tests/spec-footer-view',
+    'tests/spec-task-view'
 ];
 
 requirejs.config({

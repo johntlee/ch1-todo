@@ -11,7 +11,8 @@ define(function(require, exports, module) {
 		template: templateTask,
 
 		ui: {
-			'test': this.tagName
+			'toggle': '.toggle',
+			'remove': '.remove'
 		},
 
 		className: function() {

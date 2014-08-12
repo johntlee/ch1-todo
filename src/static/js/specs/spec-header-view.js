@@ -1,13 +1,13 @@
 define(function(require, exports, module) {
 
 // Imports
-var keys = require('built/app/keys');
+var keys           = require('built/app/keys');
 
 var TaskCollection = require('app/list/collections/task-collection');
-var HeaderView = require('app/list/views/header');
+var HeaderView     = require('app/list/views/header');
 
-var helpers = require('specs/vendor/specs-helpers');
-var Events = helpers.Events;
+var helpers        = require('specs/vendor/specs-helpers');
+var Events         = helpers.Events;
 
 describe('Header View', function() {
 

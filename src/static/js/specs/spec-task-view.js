@@ -1,11 +1,11 @@
 define(function(require, exports, module) {
 
 // Imports
-var Task         = require('app/list/models/task');
-var TaskView         = require('app/list/views/task');
+var Task     = require('app/list/models/task');
+var TaskView = require('app/list/views/task');
 
-var helpers = require('specs/vendor/specs-helpers');
-var Events = helpers.Events;
+var helpers  = require('specs/vendor/specs-helpers');
+var Events   = helpers.Events;
 
 describe('Task View', function() {
 
@@ -19,23 +19,32 @@ describe('Task View', function() {
 
 	});
 
+    it('assigns correct class name', function(){
+
+        expect($(this.taskView.$el).attr('class')).toBe('active');
+
+    });
+
     it('toggles class for task', function(){
     	$(this.taskView.ui.toggle).click();
 
-    	expect(this.task.isCompleted()).toBeTruthy();
+    	expect(this.task.get('complete')).toBeTruthy();
     	expect(this.taskView.$el.attr('class')).toBe('completed');
 
     	//click on toggle checkbox again
     	$(this.taskView.ui.toggle).click();
 
-    	expect(this.task.isCompleted()).toBeFalsy();
+    	expect(this.task.get('complete')).toBeFalsy();
     	expect(this.taskView.$el.attr('class')).toBe('active');
 
     });
 
-    // TO DO
     it('deletes the model', function(){
+        var spy = spyOn(this.task, 'destroy');
+
     	$(this.taskView.ui.remove).click();
+
+        expect(spy).toHaveBeenCalled();
     });
 
 

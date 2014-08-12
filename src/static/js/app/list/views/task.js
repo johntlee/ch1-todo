@@ -16,7 +16,7 @@ define(function(require, exports, module) {
 		},
 
 		className: function() {
-			return (this.model.isCompleted()) ? "completed" : "active";
+			return (this.model.get('complete')) ? "completed" : "active";
 		},
 
 		events: {
